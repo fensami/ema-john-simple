@@ -14,8 +14,25 @@ const Shop = () => {
     }, [])
     useEffect(() => {
         const storedCart = getShoppingCart();
-        console.log(storedCart);
-    },[])
+        const saveCart =[];
+        //step-1 get id
+        for(const id in storedCart){
+            //step-2 get the product using id
+            const addedProduct = products.find(product => product.id === id)
+            // console.log(addedProduct);
+            //step-3 get queantity of the product
+            if(addedProduct){
+            const quantity = storedCart[id];
+            addedProduct.quantity = quantity;
+            saveCart.push(addedProduct)
+           }
+           setCart(saveCart)
+           console.log('added',addedProduct);
+
+
+
+        }
+    },[products])
     const addBtnClick = (product) => {
         // console.log(product);
         const newCart = [...cart, product]
