@@ -35,7 +35,18 @@ const Shop = () => {
     },[products])
     const addBtnClick = (product) => {
         // console.log(product);
-        const newCart = [...cart, product]
+        // const newCart = [...cart, product]
+        let newCart = [];
+        const exixts =cart.find(pd => pd.id === product.id);
+        if(!exixts){
+            product.quantity = 1;
+            newCart = [...cart, product]
+        }
+        else{
+            exixts.quantity = exixts.quantity + 1;
+            const remaining = cart.filter(pd => pd.id !== product.id);
+            newCart = [...remaining,exixts]
+        }
         setCart(newCart);
         addToDb(product.id)
 
