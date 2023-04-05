@@ -28,9 +28,7 @@ const Shop = () => {
            }
            setCart(saveCart)
            console.log('added',addedProduct);
-
-
-
+           
         }
     },[products])
     const addBtnClick = (product) => {
