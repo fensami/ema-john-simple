@@ -10,3 +10,17 @@
     /* row-gap: 0px;
     column-gap: 0px; */
 }
+.btn-prossed{
+    background: #FF9900;
+    text-decoration: none;
+    width: 90%;
+    margin: 10px auto;
+    display: flex;
+    justify-content: space-between;
+    /* background: #FF3030; */
+    border-radius: 4px;
+    color: white;
+}
+.prossed-link{
+    text-decoration: none;
+}
